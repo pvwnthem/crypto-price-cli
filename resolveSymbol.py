@@ -32,6 +32,21 @@ for tr in trs:
     
 
 for name in names:
-    print(names.index(name))
+    index = names.index(name)
+    if names[index].__contains__("market") or names[index].__contains__("period"):
+      
+        names[index] = "not-valid"
 
+def remove_items(test_list, item):
+ 
+    # using list comprehension to perform the task
+    res = [i for i in test_list if i != item]
+ 
+    return res
+ 
 
+def resolveSymbol():
+    res = remove_items(names, "not-valid")
+    print(res)
+
+resolveSymbol()
