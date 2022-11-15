@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-
+import sys
 
 res = requests.get('https://coinmarketcap.com/currencies/')
 
