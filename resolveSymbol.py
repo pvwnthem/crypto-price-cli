@@ -1,10 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-from difflib import SequenceMatcher
-
-def similar(a, b):
-    return SequenceMatcher(None, a, b).ratio()
 
 res = requests.get('https://coinmarketcap.com/currencies/')
 
@@ -45,8 +41,9 @@ def remove_items(test_list, item):
     return res
  
 
-def resolveSymbol():
+def resolveSymbol(symbol):
     res = remove_items(names, "not-valid")
-    print(res)
 
-resolveSymbol()
+    index = coins.index(symbol)
+    return res[index]
+
